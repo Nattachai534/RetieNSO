@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>บัตรเชิญงานเกษียณออนไลน์</title>
+  <meta name="description" content="เว็บไซต์บัตรเชิญงานเกษียณออนไลน์ โทนชมพู–ทอง เรียบหรู พร้อมปุ่มพิมพ์ PDF และฟีเจอร์ Countdown">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="music-bar">
+    <p>ก่อนเลื่อนลง โปรดกดเล่นเพลงเพื่อบรรยากาศ</p>
+    <div class="music-controls">
+      <button class="btn primary" id="btnPlay">▶︎ เล่นเพลง</button>
+      <span id="musicStatus" class="small">ยังไม่ได้เล่น</span>
+      <audio id="bgm" src="assets/audio/theme-song.mp3" preload="none"></audio>
+    </div>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="container hero__content">
+      <img class="org-logo" id="orgLogo" alt="โลโก้หน่วยงาน" src="assets/img/logo.svg" />
+      <h1 id="title"></h1>
+      <p class="retiree" id="retireeLine"></p>
+      <p class="retiree en" id="retireeLineEn"></p>
+      <p class="org" id="orgLine"></p>
+      <p class="org en" id="orgLineEn"></p>
+      <p class="hero-copy" id="heroCopy"></p>
+      <p class="hero-copy en" id="heroCopyEn"></p>
+      <button class="btn ghost" id="btnPrint">พิมพ์เป็น PDF</button>
+      <div class="countdown">
+        <div><span id="dd">00</span><small>วัน</small></div>
+        <div><span id="hh">00</span><small>ชั่วโมง</small></div>
+        <div><span id="mm">00</span><small>นาที</small></div>
+        <div><span id="ss">00</span><small>วินาที</small></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="details">
+      <div class="container">
+        <h2>รายละเอียดงาน • <span class="en">Event Details</span></h2>
+        <ul class="event-list">
+          <li><strong>วัน/เวลา:</strong> <span id="dateTime"></span></li>
+          <li><strong>สถานที่:</strong> <span id="venue"></span></li>
+          <li><strong>การแต่งกาย:</strong> สุภาพ • <span class="en">Dress code: Formal</span></li>
+        </ul>
+        <div class="chips" id="themeColors"></div>
+        <div class="share">
+          <button class="btn" id="btnAddCalendar">เพิ่มลงปฏิทิน</button>
+          <button class="btn" id="btnShare">แชร์หน้าเชิญ</button>
+          <a class="btn outline" id="btnShareLINE" target="_blank">แชร์ LINE</a>
+          <a class="btn outline" id="btnShareFB" target="_blank">แชร์ Facebook</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="schedule">
+      <div class="container">
+        <h2>กำหนดการงาน • <span class="en">Program Schedule</span></h2>
+        <ol class="program" id="programList"></ol>
+      </div>
+    </section>
+
+    <section class="section" id="timeline">
+      <div class="container">
+        <h2>ภาพความทรงจำ</h2>
+        <div class="gallery">
+          <figure><img src="assets/img/photo1.svg" alt="photo1"><figcaption>ความทรงจำ</figcaption></figure>
+          <figure><img src="assets/img/photo2.svg" alt="photo2"><figcaption>ความทรงจำ</figcaption></figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p id="contact"></p>
+      <p class="tiny">© <span id="year"></span> <span id="orgFooter"></span></p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
